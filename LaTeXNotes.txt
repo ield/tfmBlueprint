@@ -38,4 +38,29 @@ They are mentioned before the document begins, under the documentclass. They hel
 \usepackage[Parameters]{PackageName}
 	\usepackage[a4paper, margin=1in]{geometry} %Sets the type of paper and margin. Typer of paper are A0-A5 and B0-B5. Margins are stablished in inches. 
 	\usepackage[a4paper, top=1in, left=2in, right=0.75in, botoom=1in]{geometry} %This is used to set different margins.
-	\usepackage[inner=1in, outer=2in]{geometry} %When writing a two side document, like a book, this is used to set different margins to the inner part of the book and the outer part of the book.These can be combined with top and bottom
+	\usepackage[inner=1in, outer=2in]{geometry} %When writing a two side document, like a book, this is used to set different margins to the inner part of the book and the outer part of the book.These can be combined with top and bottom.
+
+Page Style: headers, footers and page number
+It is placed after the \begin{document} command
+\pagestyle{empty} %No page numbers in the footer.
+\thispagestyle{headings} %The number in this page is displayed in the header regardless the previous commands.
+\setcounter{page}{1} %The pages restart in page 1 in this point. This is useful to do after the table of contents because ideally chapter 1 starts in page 1.
+\pagenumbering{roman} %Sets the numbering into roman numbers. To change this at some part of the document it is necesary to rewrite this command to arabic. Different options are arabic (1, 2), roman (i, ii), Roman (I, II), alph (a, b), Alph (A, B)
+\usepackage{fancyhdr}
+\pagestyle{fancy} %To set text in the header and footer. These two commands are placed somewhere before the \begin{document} command
+\lhead{Text} %Header left
+\chead{} %Header center
+\rhead{} %Header right
+\lfoot{} %Footer left
+\cfoot{} %Footer center
+\rfoot{} %Footer right
+
+Document information commands
+Current page number	\thepage
+title ‘Chapter’		\chaptername
+Chapter number		\thechapter
+Section number		\thesection
+Total number of pages	\usepackage{lastpage} %This is necessary before the \begin{document}
+			\pageref{LastPage} %This is the command to insert the total number of pages
+\renewcommand{\headrulewidth}{Xpt} %Horizontal line of x pt after the header
+\renewcommand{\footrulewidth}{Xpt} %Horizontal line of x pt before the footer
