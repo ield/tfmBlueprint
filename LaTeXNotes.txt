@@ -1,0 +1,41 @@
+Notes taken by ield
+
+Start and download LaTeX
+Download miktex from miktex.org/download
+The editor used will be texStudio. There are more editors available. There are also online editors as OverleafCOm
+
+Commands
+
+Basic
+\documentclass{article} %The document always starts with the document class. Other options in addition to article are book, report, etc.
+\title{Insert Title} %The title of the document
+\author{Name of author} %The author of the document
+\date{Insert Date} %The date of the document. \today is used for today's date.
+
+\begin{document}
+	\maketitle %The title, the author and the date appear with this command. Otherwise they are not visible.
+	....
+\end{document} %The document must be written in between these commands
+
+Section levels
+\part{...} %Level -1.
+\chapter{...} %Level 0. Only for reports and books. In books chapters are orgnanized so that they start on odd pages. In reports chapters can start on any page.
+\section{...} %Level 1.
+\subsection{...} %Level 2.
+\subsubsection{...} %Level 3.
+\paragraph{...} %Level 4. It indents properly the paragraph.
+\subparagraph{...} %Level 5.
+%Sections can be collapsed. This way it is easy to copy, paste and reorganize the document.
+% \\ is used to create a new line. It is necessary, otherwise returns are not placed.
+\tableofcontents %To be written after the \maketitle command. It must be run twice. The first time, it only creates a .toc file and the second time it reads the .toc file. When creating the table of contents in a book, it considers chapter '0' if there is no chapter. Therefore, sections will be 0.1 and so on.
+\section[alias]{...} %Alias to a very large section so that the alias will appear on the table of contents.
+Whenever we write commands like \chapter{...}, \section{...}, the title is mentioned in the table of contents that is generated. There are situations when you would not like the entry in ToC. This is achieved by appending a * to the command. For example, consider the commands \chapter*{Introduction} or \subsection*{Time-Table}. There will not be any entry of Introduction and Time-Table in the Table of Contents.
+LaTeX denotes different characters for representing the opening and closing of quotes. ` symbol represents the opening of quotes while ' represents the closing of quotes.
+Special characters:  \$  \&  \%  \_  \{   \}   \#
+
+Packages
+They are mentioned before the document begins, under the documentclass. They help to set the format, such as the page size.
+\usepackage[Parameters]{PackageName}
+	\usepackage[a4paper, margin=1in]{geometry} %Sets the type of paper and margin. Typer of paper are A0-A5 and B0-B5. Margins are stablished in inches. 
+	\usepackage[a4paper, top=1in, left=2in, right=0.75in, botoom=1in]{geometry} %This is used to set different margins.
+	\usepackage[inner=1in, outer=2in]{geometry} %When writing a two side document, like a book, this is used to set different margins to the inner part of the book and the outer part of the book.These can be combined with top and bottom
