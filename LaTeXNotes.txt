@@ -40,7 +40,7 @@ They are mentioned before the document begins, under the documentclass. They hel
 	\usepackage[a4paper, top=1in, left=2in, right=0.75in, botoom=1in]{geometry} %This is used to set different margins.
 	\usepackage[inner=1in, outer=2in]{geometry} %When writing a two side document, like a book, this is used to set different margins to the inner part of the book and the outer part of the book.These can be combined with top and bottom.
 
-Page Style: headers, footers and page number
+Page Style: headers, footers, page number, columns
 It is placed after the \begin{document} command
 \pagestyle{empty} %No page numbers in the footer.
 \thispagestyle{headings} %The number in this page is displayed in the header regardless the previous commands.
@@ -54,6 +54,22 @@ It is placed after the \begin{document} command
 \lfoot{} %Footer left
 \cfoot{} %Footer center
 \rfoot{} %Footer right
+\usepackage[landscape]{geometry} %Sets the paper orientation to landscape.
+\usepackage[]{geometry} %Sets the paper orientation to portrait. It is set by default.
+\usepackage{lscape} %Package used to set one specific part of the document in landscape. It is introduced somewhere before the \begin{document} command.
+\usepackage{pdflscape} %Package used to set one specific part of the document in landscape.lscape because in the preview the landscape page appears rotated, so thatv it is more visual. After printing the result is the same.
+\begin{landscape}
+	...
+\end{landscape} %Part of the document in landscape page
+\footnote{text of footnote} %Introduces a footnote. They appear numbered
+\documentclass[twocolumn]{article} %Sets the type of document to two coulmns.
+\usepackage{multicol} %Package used to set many columns
+\begin{multicols}{3}
+	...
+\end{multicols}
+\setlength{\columnsep}{20pt} %Sets the separation between columns. It must be written before the begin{multicols} command.
+\setlength{\columnseprule}{3pt} %Introduces a separation line between columns. It must be written before the begin{multicols} command.
+\columnbreak %To continue text in the next column.
 
 Document information commands
 Current page number	\thepage
@@ -63,4 +79,9 @@ Section number		\thesection
 Total number of pages	\usepackage{lastpage} %This is necessary before the \begin{document}
 			\pageref{LastPage} %This is the command to insert the total number of pages
 \renewcommand{\headrulewidth}{Xpt} %Horizontal line of x pt after the header
-\renewcommand{\footrulewidth}{Xpt} %Horizontal line of x pt before the footer
+\renewcommand{\footrulewidth}{Xpt} %Horizontal line of x pt before the footer.
+
+Page Breaks (no need for explaination)
+\pagebreak
+\newpage
+
