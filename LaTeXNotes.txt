@@ -15,7 +15,7 @@ Basic
 \begin{document}
 	\maketitle %The title, the author and the date appear with this command. Otherwise they are not visible.
 	....
-\end{document} %The document must be written in between these commands
+\end{document} %The document must be written in between these commands. This command can be moved to detect errors: the LaTeX reads until it finds this line.
 
 Section levels
 \part{...} %Level -1.
@@ -85,3 +85,36 @@ Page Breaks (no need for explaination)
 \pagebreak
 \newpage
 
+Formatting text
+\textbf{text in bold} %This command formats to bold the text in braces.
+\textit{text in italics} %This command formats to italics the text in braces.
+\underline{text underlined} %This command underlines the text in braces.
+\textsuperscript{superscript} %This command sets as a superscript the text in braces.
+\textsubscript{subscript} %This command sets as a subscript the text in braces.
+%By defauslt, th text in latex is justified.
+\begin{flushleft} %This command alligns the text to the left.
+	Text alligned to the left
+\end{flushleft}
+\begin{flushright} %This command alligns the text to the right.
+	Text alligned to the left
+\end{flushright}
+\begin{center} %This command centers the text.
+	Text centered
+\end{center}
+%Other alternative to text alligning
+\usepackage{ragged2e}
+\centering %Centers the text from this point on until there is another command.
+\fushleft %Alligns the text to the left from this point on until there is another command.
+\fushright %Alligns the text to the right from this point on until there is another command.
+\justify %Justifies the text from this point on until there is another command.
+
+
+% When modifying the size of the text, the command syntax changes. To change the text size the command is {\newTextSize text}. For example {\footnotesize This is a footnote}
+% Different sizes include \tiny (the smallest), scriptsize (for scripts), \footnotesize (for footnotes), \small, \normalsize (default), \large, \Large, \huge, and \Huge (the largest size).
+
+Coloring
+%Basic colors are red, blue, green, white, yellow, etc (these colors appear on the package color). There are more colors in the package xcolor and dvipsnames (this enables the posibility of miximg colors.
+\usepackage[dvipsnames]{xcolor}
+\textcolor{blue}{Text in blue} %Sets the text into the color written in the first braces.
+\textcolor{red!70!blue}{text} %Sets the text into a color 70% red and 30% blue.
+\pagecolor{blue} %Sets the page into the color written in the braces.
